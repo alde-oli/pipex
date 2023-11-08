@@ -24,26 +24,3 @@ For example:
 ```
 ./pipex infile "ls -l" "wc -l" outfile
 ```
-
-## Installation
-
-Clone the repository, compile the program with Makefile, and run it with your desired commands. Here's how to get started:
-
-```bash
-git clone https://your-github-repository-link.git
-cd pipex
-make
-./pipex file1 cmd1 cmd2 file2
-```
-
-## Prerequisites
-
-- A 42 School student ready to tackle process communication challenges.
-- Basic knowledge of C programming and UNIX processes.
-- Enthusiasm for low-level system programming!
-
-Explore this project and dive into the intricacies of UNIX pipes on my [GitHub repository](#). Contributions and discussions are always welcome!
-
-```
-
-Remember to replace the placeholder URL with the actual link to your GitHub repository. This README provides a concise overview, usage instructions, a note on the bonus feature, and an invitation for others to engage with your project.
