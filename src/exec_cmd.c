@@ -6,7 +6,7 @@
 /*   By: alde-oli <alde-oli@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:27:44 by alde-oli          #+#    #+#             */
-/*   Updated: 2023/11/08 13:55:37 by alde-oli         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:55:50 by alde-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static char	*ft_getenv(const char *name, char **env)
 static char	*join_path_with_cmd(const char *path, const char *cmd)
 {
 	char	*full_path;
-	char	*slash_cmd;
 	size_t	path_len;
 	size_t	cmd_len;
 

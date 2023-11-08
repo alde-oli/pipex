@@ -6,27 +6,11 @@
 /*   By: alde-oli <alde-oli@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:22:17 by alde-oli          #+#    #+#             */
-/*   Updated: 2023/11/08 13:05:18 by alde-oli         ###   ########.fr       */
+/*   Updated: 2023/11/08 18:35:50 by alde-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
-
-static void	ft_child(int *pipefd, char *cmd, char **envp)
-{
-	ft_close(pipefd[0]);
-	ft_dup2(pipefd[1], STDOUT_FILENO);
-	ft_exec_command(cmd, envp);
-}
-
-static int	ft_parent(int *pipefd, int *prev_input_fd, pid_t child_pid)
-{
-	ft_close(pipefd[1]);
-	if (prev_input_fd)
-		ft_close(*prev_input_fd);
-	waitpid(child_pid, NULL, 0);
-	return (pipefd[0]);
-}
 
 static void	ft_fork_and_exec(int *prev_input_fd, char *cmd, char **envp)
 {
@@ -54,7 +38,7 @@ int	main(int argc, char **argv, char **envp)
 	int	input_fd;
 	int	output_fd;
 
-	ft_start_check(argc, argv);
+	ft_start_check(argc, argv, envp);
 	input_fd = open(argv[1], O_RDONLY);
 	if (input_fd == -1)
 		ft_error("Error opening file1");
