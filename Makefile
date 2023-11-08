@@ -1,10 +1,13 @@
 NAME = pipex
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+
 SRC_DIR = ./src
 LIBFT_DIR = ./mini_libft
+INCLUDE_DIR = ./include
 OBJ_DIR = ./obj
-INCLUDES = -I$(SRC_DIR) -I$(LIBFT_DIR)
+
+INCLUDES = -I$(INCLUDE_DIR)
 
 SRC = $(wildcard $(SRC_DIR)/*.c) $(wildcard $(LIBFT_DIR)/*.c)
 OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
