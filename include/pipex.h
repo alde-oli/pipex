@@ -6,7 +6,7 @@
 /*   By: alde-oli <alde-oli@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:01:07 by alde-oli          #+#    #+#             */
-/*   Updated: 2023/11/08 20:22:35 by alde-oli         ###   ########.fr       */
+/*   Updated: 2024/01/03 22:09:25 by alde-oli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 # include <sys/wait.h>
 # include <stdio.h>
 # include "mini_libft.h"
+
+# define BUFFER_SIZE 32
+
+typedef struct s_file
+{
+	int		fd;
+	char	*buf;
+}	t_file;
 
 //closes the file descriptor fd if not -1
 void	ft_close(int fd);
@@ -34,5 +42,11 @@ int		ft_exec_command(char *cmd, char **envp);
 void	ft_child(int *pipefd, char *cmd, char **envp);
 //executes the parent routine
 int		ft_parent(int *pipefd, int *prev_input_fd, pid_t child_pid);
+//gnl fcts
+char	*get_next_line(int fd);
+char	*ft_strndup(char *src, int i);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+int		ft_find_nl(char *str);
+
 
 #endif
